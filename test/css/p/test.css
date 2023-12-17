@@ -1,23 +1,129 @@
-#snb_zone > ul > li{
-    list-style: none;
-    display : inline-block;
-    margin: 0 0.5% 0 0;
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
+
+*{
+    font-family: 'GmarketSansMedium';
+}
+
+#content{
+    padding: 0 20%;
+}
+div{
+    display: block;
+    padding : 0 1% 0.5% 1%;
+}
+
+#snb_zone{
+    padding: 0 0 0 2%;
+    ul {
+        padding : 0;
+        border-bottom: 1px solid black;
+
+        li{
+            list-style: none;
+            display: inline-block; /* 인라인-블록으로 설정 */
+            vertical-align: middle; 
+            color : gray;
+            font-size: 20px;
+            padding: 1% 2.5% 0 0;
+            height: 100%;
+
+            a{
+                display: flex;
+            }
+        }
+
+    }
+}
+#check_snb{
+    border-bottom: 3px solid black;
+}
+
+#category{
+    margin-top: 3%;
+    a{ 
+        text-decoration: none;
+        text-align: center;
+        color: black;
+        padding: 0.5% 1% 0.5% 1%;
+        margin: auto;
+    }
+    /* 클릭되었을때 색상 */
+    #allCategory{
+        border-radius: 8px;
+        color : #e6e6e6;
+        background-color: #464D0F;
+    }
+}
+
 
 table{
     width: 100%;
-    padding: 1%;
+    padding: 10%;
     text-align: center;
-    
+    text-align: center;
+    border-collapse: collapse; 
 }
 
-thead{
-    display : table-header-group;
-    vertical-align: middle;
-    
+th td{
+    width : 5%;
 }
-
-tr{
+th{
+    border : 0.5px solid lightgray;
     border-top : 1px solid black;
-    
+    padding: 8px;
+    background-color: #e4e0e0;
+    font-weight: 100px;
+    text-align: center;
+}
+
+td{
+    padding : 13px 10px 15px 10px;
+    border-bottom :solid 1px #dbdbdb;
+}
+
+.board_writer{
+    width : 13%;
+}
+
+.board_title{
+    width: 50%;
+    text-align: left;
+}
+
+#pagenation{
+    ul{
+        padding: 0;
+        text-align: center;
+        align-items: center;
+        padding: 0 2% 0 0;
+
+        li{
+            margin-right: 2%;
+            display: inline-block;
+            list-style: none;
+
+            a{
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+                transition: background-color 0.3s, color 0.3s;
+                font-size: 14px; 
+                margin: 2px; 
+            }
+        }
+    }
+}
+
+#pagenation ul li a:hover {
+    background-color: #464D0F;
+    color: #e6e6e6;
 }

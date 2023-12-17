@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nanum+Myeongjo&family=Noto+Serif+TC:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div id="main">
+		<nav>
+			<div id="logo">
+				<a href="home">
+					<img src="resources/image/logo.png"
+						width="130px" height="150px" aria-posinset="center">
+						<span>멍놀먹자 유치원</span>
+				</a>
+			</div>
+				<div id="horizontal-underline"></div>
+					<div class="test">
+						<a href="map.bo">유치원소개</a>
+						<a href="BoardList.bo">커뮤니티</a>
+						<a href="#">유치원 이용료</a>
+						<a href="insertRes.re">예약하기</a>
+					</div>
+						<c:if test="${empty loginUser }">
+							<li id="login"><a href="loginView.me">로그인</a></li>
+						</c:if>
+						<c:if test="${!empty loginUser }">
+							<li id="myPage"><a href="loginView.me">마이페이지</a></li>
+							<li id="logout"><a href="logout.me">로그아웃</a></li>
+							<c:if test="${loginUser.isAdmin == 'Y'}">
+								<li id="manager"><a href="#">관리자페이지</a></li>
+							</c:if>
+						</c:if>
+			
+		</nav>
+		<script src="nav.js"></script>
+	</div>
+	
+</body>
+</html>
