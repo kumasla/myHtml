@@ -1,0 +1,53 @@
+.product-list {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid #003b6e;
+    border-bottom: 20px;
+    position: relative;
+
+}
+
+.product {
+    width: 200px;
+    text-align: center;
+    display: block;
+    color: #000000;
+    text-decoration: none;
+    float: right;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.product-name {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size:large;
+    font-weight: bolder;
+
+}
+
+.background:before{
+    content:""; 
+    width: 100%; 
+    height: 208.2%; 
+    position: absolute; 
+    margin-left: 0 auto;
+    top:20vh; 
+    left:0; 
+    background-image: url('/image/PL_NEXTGEN_BACKPLATE_01\(그레이\).png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 2056px 2056px;
+    opacity: 0.35;
+}
+
+.background{
+    z-index: -1}
+
+.background:before{
+    z-index: -1}
+    
+.background:hover{
+    z-index: -0}    

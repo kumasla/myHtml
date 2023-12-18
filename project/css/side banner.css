@@ -1,0 +1,27 @@
+/* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
+.icon-bar {
+  position:relative;
+  top: 60%;
+  float: right;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* Style the icon bar links */
+.icon-bar a {
+  display:flex;
+  text-align: center;
+  padding: 20px;
+  background-color: #f3f3f3d5;
+  border-bottom-style:solid;
+  border-bottom-color: #17469E;
+  transition: all 0.1s ease;
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+}
+
+/* Style the social media icons with color, if you want */
+.icon-bar a:hover {
+  background-color: #c2c2c2;
+}
