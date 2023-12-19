@@ -41,26 +41,6 @@ line-height: 1;
 padding: 5;
 }
 
-ol, ul {
-list-style: none;
-position:absolute;
-}
-
-blockquote, q {
-quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-content: '';
-content: none;
-}
-
-table {
-border-collapse: collapse;
-border-spacing: 0;
-}
-
 /* box-sizing */
 * {
 box-sizing: border-box;
@@ -70,13 +50,14 @@ box-sizing: border-box;
 
 
 /* 헤더 - 높이, 색상 */
-header {
+#header {
     height: 50px;
     background: linear-gradient(to bottom, #464D0F, #2B3004 , #1a1d02); /* 그라데이션 추가 */
     padding: 0px 2.5%;
 }
 
-header li {
+#header li {
+    list-style: none;
     height: 65px;
     line-height: 50px;
     position: relative;
