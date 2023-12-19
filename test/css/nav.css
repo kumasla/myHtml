@@ -5,19 +5,7 @@
     font-style: normal;
 }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+ body, p, ul, li, audio {
     font-family: 'GmarketSansMedium';
     margin: 0 auto;
     padding: 0;
@@ -26,28 +14,6 @@ time, mark, audio, video {
     font:700;
     vertical-align: baseline;
 }
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-display: block;
-width: 100%;
-min-width: 1467px;
-position: relative;
-}
-
-body {
-line-height: 1;
-padding: 5;
-}
-
-/* box-sizing */
-* {
-box-sizing: border-box;
--moz-box-sizing: border-box;
--webkit-box-sizing: border-box;
-}
-
 
 /* 헤더 - 높이, 색상 */
 #header {
@@ -65,7 +31,7 @@ box-sizing: border-box;
 }
 
 /* 정렬 - 하위메뉴 들여쓰기 */
-header li a {
+#header li.main-menu a.main-menu-name{
     padding-left: 20px;
     text-decoration: none;
     color: #ffffff;
@@ -86,28 +52,30 @@ header li a {
     background-color: #F2ECE3;
     align-items: center;
     text-align: center;
-    a {
-        color: black;
-        display: inline-block; 
-        padding: 0;
-        position: relative;
-        text-align: center;
-        white-space: nowrap;
-        
-        .pointImg {
-            width: 120px;
-            display: none;
-            position: absolute;
-            margin-right: 55%;
-            margin-left: -70%;
-            top: 55%;
-            right: -20px;
-            transform: translateY(-50%);
-        }
-    }
-} 
+}
 
-.main-menu li>a:hover {
+.main-menu li a {
+    color: black;
+    display: inline-block;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration-line:none;
+}
+
+.pointImg {
+    width: 120px;
+    display: none;
+    position: absolute;
+    margin-right: 55%;
+    margin-left: -70%;
+    top: 55%;
+    right: -20px;
+    transform: translateY(-50%);
+}
+
+.main-menu li.sub-menu-1>a.sub-menu-name:hover {
     padding-left: 0;
     text-decoration : underline;
     text-decoration-thickness : 2px;
@@ -154,7 +122,7 @@ header li a {
     position: absolute;
     font-size : 12px;
     top: 0.3%; /* 원하는 수치로 조정 */
-    right: 10%; /* 원하는 수치로 조정 */
+    right: 1%; /* 원하는 수치로 조정 */
     height: 300px; /* 높이 설정 */
     width: auto; /* 너비 설정 */
 }
@@ -169,11 +137,13 @@ header li a {
   
   #my_menu li {
     display: inline-block;
-    margin-right: 5px; /* 간격 설정 */
+    margin: 1px;
   }
   
   #my_menu li a {
-    padding: 5px 10px;
+    padding: 5px 7px;
     line-height: 30px;
+    color: black;
+    text-decoration-line : none;
     white-space: nowrap; /* 텍스트가 줄바꿈되지 않도록 설정 */
   }
