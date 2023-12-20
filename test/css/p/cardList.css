@@ -1,0 +1,110 @@
+/* 폰트 설정 */
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 전체 요소에 폰트 적용 */
+* {
+  font-family: 'GmarketSansMedium';
+}
+/* 상단 이동 버튼 */
+#upBtnArea{
+  top: 88%;
+  left: 92%;
+  position: fixed;
+}
+/* 상단 이동 버튼 */
+#back-to-top {
+  display: inline-block;
+  background-color: transparent !important;
+  width: 38px;
+  height: 38px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 25px !important;
+  right: 35px !important;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: visible;
+  z-index: 99999999;
+}
+.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+#content {
+  padding: 0 20%;
+}
+
+/* 일반적인 div 요소 스타일 */
+div {
+  display: block;
+  padding: 0 1% 0.5% 1%;
+}
+
+#snb_zone {
+  padding: 0 0 0 2%;
+}
+
+#snb_zone ul {
+  padding: 0;
+  border-bottom: 1px solid black;
+}
+
+#snb_zone ul li {
+  list-style: none;
+  display: inline-block;
+  vertical-align: middle;
+  color: gray;
+  font-size: 20px;
+  padding: 1% 2.5% 0 0;
+  height: 100%;
+}
+
+#snb_zone ul li a {
+  display: flex;
+}
+
+#check_snb {
+  border-bottom: 3px solid black;
+}
+
+/* 카테고리 */
+#category {
+  margin-top: 3%;
+}
+
+#category a {
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  padding: 0.5% 1% 0.5% 1%;
+  margin: auto;
+}
+
+#allCategory {
+  border-radius: 8px;
+  color: #e6e6e6;
+  background-color: #464D0F;
+}
+
+/* cardList */
+.board_list_card{
+  list-style: none;
+  border: 1px solid black;
+  padding: 16px;
+  width: 92%;
+}
+
+.card_list{
+  display: block;
+  border-bottom: 1.5px solid lightgray;
+  height: 120px;
+  width: 100%;
+}

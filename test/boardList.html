@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/p/test.css">
+    <link rel="stylesheet" href="css/p/boardList.css">
+    <link rel="stylesheet" href="css/nav.css">
 </head>
 <body>
+    <a id="back-to-top"><img src='image/topBtn.png' style='width:38px; height:38px;'></a>
     <div id="content">
         <div id="space_zone">
             <p>
@@ -21,6 +23,9 @@
                     </li>
                     <li>
                         <a>캠핑레시피</a>
+                    </li>
+                    <li>
+                        <a>중고거래</a>
                     </li>
                 </ul>
             </div>
@@ -56,7 +61,7 @@
                                 <td>1</td>
                                 <td>백패킹</td>
                                 <td class="board_writer">유성</td>
-                                <td class="board_title">백패킹 경험담~</td>
+                                <td class="board_title">백패킹 경험담~<img src="./image/file.png" alt="첨부파일" class="attachment_icon"></td>
                                 <td>0</td>
                                 <td>0</td>
                                 <td>2023-12-24</td>
@@ -228,5 +233,34 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 스크롤이 끝으로 이동 시 이벤트 발생
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset <= 0) {
+                    document.getElementById('back-to-top').classList.remove('show');
+                } else {
+                    document.getElementById('back-to-top').classList.add('show');
+                }
+            });
+
+            window.addEventListener('touchmove', function() {
+                if (window.pageYOffset <= 0) {
+                    document.getElementById('back-to-top').classList.remove('show');
+                } else {
+                    document.getElementById('back-to-top').classList.add('show');
+                }
+            });
+
+            document.getElementById('back-to-top').addEventListener('click', function() {
+                // 페이지 맨 위로 스크롤하는 애니메이션
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                document.getElementById('back-to-top').classList.remove('show');
+            });
+        });
+    </script>
 </body>
 </html>
