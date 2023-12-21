@@ -4,8 +4,24 @@
     font-weight: normal;
     font-style: normal;
 }
+#nav-body{
+    font-family: 'GmarketSansMedium';
+    margin: 0 auto;
+}
+/* 헤더 - 높이, 색상 */
+#header {
+    height: 50px;
+    background: #F3F4F6;
+    padding: 0px 2.5%;
+    font-family: 'GmarketSansMedium';
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
 
- body, p, ul, li, audio {
+#header ul{
     font-family: 'GmarketSansMedium';
     margin: 0 auto;
     padding: 0;
@@ -15,14 +31,12 @@
     vertical-align: baseline;
 }
 
-/* 헤더 - 높이, 색상 */
-#header {
-    height: 50px;
-    background: linear-gradient(to bottom, #464D0F, #2B3004 , #1a1d02); /* 그라데이션 추가 */
-    padding: 0px 2.5%;
-}
-
 #header li {
+    font-family: 'GmarketSansMedium';
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
     list-style: none;
     height: 65px;
     line-height: 50px;
@@ -34,10 +48,10 @@
 #header li.main-menu a.main-menu-name{
     padding-left: 20px;
     text-decoration: none;
-    color: #ffffff;
+    color: #000;
     font-weight: 500;
     display: block;
-    padding: 0px 150px;
+    padding: 0px 158px;
     text-align: center; /* 변경된 부분 */
 }
 
@@ -49,7 +63,7 @@
 
 
 .main-menu li {
-    background-color: #F2ECE3;
+    background-color: rgba(243,244,246,0.5);
     align-items: center;
     text-align: center;
 }
@@ -65,7 +79,8 @@
 }
 
 .pointImg {
-    width: 120px;
+    width: 140px;
+    height: 80px;
     display: none;
     position: absolute;
     margin-right: 55%;
@@ -108,12 +123,17 @@
 
 /* 이미지를 중앙에 배치하는 CSS */
 .logo {
+    margin: 0 auto;
     text-align: center;
-    background-color: #F2ECE3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px; /* 원하는 높이로 조정 */
 }
 
 .logo a img {
-    display: block;
+    display: inline-block;
+    position : absolute;
     margin: 0 auto;
     margin-left: 47.2%;
 }
