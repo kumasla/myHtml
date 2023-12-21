@@ -4,19 +4,20 @@
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
-
-/* 전체 요소에 폰트 적용 */
-* {
+  }
+  
+  /* 전체 요소에 폰트 적용 */
+  * {
     font-family: 'GmarketSansMedium';
-}
-/* 상단 이동 버튼 */
-#upBtnArea{
+  }
+  /* 상단 이동 버튼 */
+  #upBtnArea{
     top: 88%;
     left: 92%;
     position: fixed;
-}
-#back-to-top {
+  }
+  /* 상단 이동 버튼 */
+  #back-to-top {
     display: inline-block;
     background-color: transparent !important;
     width: 38px;
@@ -32,32 +33,24 @@
     visibility: visible;
     z-index: 99999999;
   }
-.show {
+  .show {
     opacity: 1 !important;
     visibility: visible !important;
-}
-/* 컨텐츠 영역 */
-#content {
+  }
+  
+  #content {
     padding: 0 20%;
-}
-
-/* 일반적인 div 요소 스타일 */
-div {
+  }
+  
+  /* 일반적인 div 요소 스타일 */
+  div {
     display: block;
     padding: 0 1% 0.5% 1%;
-}
-
-/* 사이드 네비게이션 */
-#snb_zone {
-    padding: 0 0 0 2%;
-}
-
-#snb_zone ul {
-    padding: 0;
-    border-bottom: 1px solid black;
-}
-
-#snb_zone ul li {
+  }
+  
+  
+  
+  #snb_zone ul li {
     list-style: none;
     display: inline-block;
     vertical-align: middle;
@@ -65,35 +58,55 @@ div {
     font-size: 20px;
     padding: 1% 2.5% 0 0;
     height: 100%;
-}
-
-#snb_zone ul li a {
+  }
+  #snb_zone{
+    width: 93%;
+    padding: 0;
+    margin-left: 2%;
+  }
+  
+  #snb_zone ul {
+    width: 100%;
+    position: relative;
+    padding: 0;
+    border-bottom: 1px solid black;
+  }
+  
+  #snb_zone ul li a {
     display: flex;
-}
-
-#check_snb {
+  }
+  
+  
+  #check_snb {
     border-bottom: 3px solid black;
-}
-
-/* 카테고리 */
-#category {
-    margin-top: 3%;
-}
-
-#category a {
+  }
+  
+  /* 카테고리 */
+  #point_zone{
+    width: 92%;
+    padding-left: 0;
+    margin-left: 2%;
+    border-bottom: 1px solid black;
+  }
+  
+  #category {
+    margin: 1%;
+    margin-left: 0;
+  }
+  
+  #category a {
     text-decoration: none;
     text-align: center;
     color: black;
     padding: 0.5% 1% 0.5% 1%;
     margin: auto;
-}
-
-#allCategory {
+  }
+  
+  #allCategory {
     border-radius: 8px;
     color: #e6e6e6;
     background-color: #464D0F;
-}
-
+  }
 /* 게시판 목록 테이블 */
 table {
     width: 100%;
