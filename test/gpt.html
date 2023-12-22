@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>비디오 플랫폼 인터페이스</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+  }
+  .header {
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 20px;
+  }
+  .logo {
+    font-size: 24px;
+    color: #ff0000;
+    font-weight: bold;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+  }
+  .video-card {
+    background-color: #fff;
+    border-radius: 7px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  .video-thumbnail {
+    width: 100%;
+    height: 180px;
+    background-color: #ddd;
+  }
+  .video-details {
+    padding: 15px;
+  }
+  .video-title {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  .video-meta {
+    font-size: 14px;
+    color: #666;
+  }
+  @media (max-width: 1200px) {
+    .grid-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (max-width: 900px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 600px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">로고</div>
+</div>
+
+<div class="grid-container">
+  <!-- Video cards -->
+  <!-- Repeat this block for each video -->
+  <div class="video-card">
+    <div class="video-thumbnail"></div>
+    <div class="video-details">
+      <div class="video-title">비디오 제목 1</div>
+      <div class="video-meta">채널 이름 • 조회수 • 업로드 날짜</div>
+    </div>
+  </div>
+  <!-- ... additional video cards ... -->
+  <div class="video-card">
+    <div class="video-thumbnail"></div>
+    <div class="video-details">
+      <div class="video-title">비디오 제목 2</div>
+      <div class="video-meta">채널 이름 • 조회수 • 업로드 날짜</div>
+    </div>
+  </div>
+  <!-- ... additional video cards ... -->
+  <div class="video-card">
+    <div class="video-thumbnail"></div>
+    <div class="video-details">
+      <div class="video-title">비디오 제목 3</div>
+      <div class="video-meta">채널 이름 • 조회수 • 업로드 날짜</div>
+    </div>
+  </div>
+  <!-- Repeat the video-card block as needed for additional videos -->
+</div>
+
+</body>
+</html>

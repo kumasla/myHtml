@@ -1,5 +1,4 @@
 /* 폰트 설정 */
-/* 폰트 설정 */
 @font-face {
   font-family: 'GmarketSansMedium';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
@@ -104,98 +103,71 @@
   background-color: #464D0F;
 }
 
-.board_zone_cont{
-  display: block;
-  list-style: none;
-  padding-left: 16px;
-  width: 92%;
-  font-size: 13px;
-  font-weight: 500;
-  
+/* 이전 CSS 코드는 그대로 유지하고 아래에 카드와 그리드 스타일을 추가합니다. */
+
+/* 기존 CSS 코드에 아래 내용을 추가하거나 수정합니다. */
+
+/* board_zone_cont 스타일 수정 */
+#board_zone_cont {
+  max-width: 92%;
+  margin-left: 1.5%;
+  margin-top: 16px;
 }
 
-/* 게시판 목록 테이블 */
-table {
-    width: 92%;
-    padding-left: 16px;
-    margin-left: 1.5%;
-    text-align: center;
-    border-collapse: collapse;
-    position: relative;
+/* 이미지와 h2 사이의 여백 조정 */
+.card-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 3px; /* 이미지와 h2 사이의 여백을 조정합니다. */
 }
 
-th,
-td {
-    width: 5%;
-    padding: 8px;
-    text-align: center;
+/* h2 스타일 수정 */
+.card h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px; /* h2의 하단 여백을 조정합니다. */
 }
 
-th {
-    border: 0.5px solid lightgray;
-    border-top: 1px solid black;
-    background-color: #e4e0e0;
-    font-weight: 100px;
+
+/* 카드 그리드 스타일 */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 한 줄에 4개의 카드로 설정합니다. */
+  grid-gap: 20px; /* 각 카드 사이의 간격을 조절합니다. */
 }
 
-td {
-    padding: 13px 10px 15px 10px;
-    border-bottom: solid 1px #dbdbdb;
-    justify-content: space-between;
-    text-align: center;
-    align-items: center;
-    position: relative;
+/* 카드 스타일 */
+.card {
+  border-radius: 8px;
+  margin-right: 2.5px;
+  margin-left: 2.5px;
+  min-width: 240px;
+  min-height: 240px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.board_writer {
-    width: 12%;
+.card .con{
+  margin-left: 2%;
 }
 
-.board_title {
-    width: 40%;
-    text-align: left;
+.card .movie_img{
+  display: inline-block;
+  position: relative;
 }
 
-.attachment_icon {
-    position: absolute;
-    width: 20px;
-    height: auto;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 10px;
+.card .movie_img img{
+  border-radius: 8px;
 }
 
-/* 페이지네이션 */
-#pagenation {
-    text-align: center;
-    padding: 0 2% 0 0;
+.card .con a{
+  color: #222;
+  text-decoration: none;
 }
 
-#pagenation ul {
-    padding: 0;
-    align-items: center;
+.card .con_top {
+  display: flex;
+  align-items: center;
 }
 
-#pagenation ul li {
-    margin-right: 2%;
-    display: inline-block;
-    list-style: none;
-}
-
-#pagenation ul li a {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
-    font-size: 14px;
-    margin: 2px;
-}
-
-#pagenation ul li a:hover {
-    background-color: #464D0F;
-    color: #e6e6e6;
-}
