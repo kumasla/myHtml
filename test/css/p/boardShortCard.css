@@ -103,10 +103,6 @@
   background-color: #464D0F;
 }
 
-/* 이전 CSS 코드는 그대로 유지하고 아래에 카드와 그리드 스타일을 추가합니다. */
-
-/* 기존 CSS 코드에 아래 내용을 추가하거나 수정합니다. */
-
 /* board_zone_cont 스타일 수정 */
 #board_zone_cont {
   max-width: 92%;
@@ -121,7 +117,6 @@
   margin-bottom: 3px; /* 이미지와 h2 사이의 여백을 조정합니다. */
 }
 
-/* h2 스타일 수정 */
 .card h2 {
   font-size: 1.5em;
   margin-bottom: 10px; /* h2의 하단 여백을 조정합니다. */

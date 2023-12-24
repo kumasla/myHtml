@@ -226,88 +226,109 @@
   }
 }
 
-.board_list_card .user_info .user_nick_area .p-nick{
+.board-container {
+  margin-left: 0.8%;
+  padding-top: 1.5%;
+  display: block;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.card {
+  width: calc(23% - 20px);
+  margin-right: 2.2%;
+  margin-bottom: 3%;
+  background-color: #fff;
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-body {
+  padding: 10px;
+  text-align: left;
+}
+
+.card-title {
+  display: flex; /* Flex 컨테이너 설정 */
+  align-items: center; /* 세로 정렬 */
+  justify-content: space-between; /* 요소들 사이에 공간을 균등하게 분배 */
+  padding: 0; /* 좌우 패딩 */
+}
+
+.title-text {
+  font-size: 1rem;
+  font-weight: bold;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  flex-grow: 1; /* 제목이 남는 공간을 채우도록 설정 */
 }
 
-/* 게시글 정보 */
-.user_info .date_num {
-  float: left;
-  color: #999;
+.card-category {
+  padding: 5px 10px;
+  background-color: #464D0F;
+  color: #fff;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  display: inline-flex; /* Flex 아이템으로 설정 */
+  align-items: center; /* 세로 정렬 */
+  white-space: nowrap;
+  margin-left: 10px; /* 제목과 카테고리 사이 간격 */
+  flex-shrink: 0; /* 카테고리 크기가 줄어들지 않도록 설정 */
 }
 
-.user_info .date_num::before{
-  content: '';
-  display: inline-block;
-  width: 2px;
-  height: 2px;
-  margin: 0 5px 4px 7px;
-  border-radius: 2px;
-  background-color: #999;
-}
-.user_info .date{
-  margin-right: 16px;
+.card-author{
+  font-size: 0.9rem;
+  font-weight: bold;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  width: 100%; 
+  display: block; 
 }
 
-/* 좋아요 영역 */
-.board_list_card .like_area{
-  display: inline-block;
-  padding: 0 0 0 7px;
+.card-info {
+  padding-top: 3px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #666;
 }
 
-.board_list_card .like_area .comment_area{
-  display: inline-block;
-  margin-right: 5px;
+.card-info table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.board_list_card .like_area .comment_area .c_comment_list{
-  display: inline-block;
-  vertical-align: middle;
+.info-label, .info-value {
+  padding: 4px;
+  text-align: center;
 }
 
-.board_list_card .like_area .comment_area .c_comment_list .comment_ico{
-  margin-top: 2px;
-  width: 13px;
-  height: 10px;
+.info-label {
+  font-weight: bold;
+  border-radius: 5px;
 }
 
-.board_list_card .like_area .u_like_list_module{
-  display: inline-block;
-  vertical-align: middle;
+.date-year, .date-day {
+  padding: 2px 6px;
 }
 
-.board_list_card .like_area .u_like_list_module .u_icon{
-  margin-top: 2px;
-  width: 13px;
-  height: 10px;
+.date-year {
+  font-weight: bold;
 }
 
-.board_list_card .like_area .u_like_list_module .u_cnt{
-  color: #222;
-}
 
-.board_list_card .like_area .comment_area .num{
-  color: #222;
-}
-
-/* 이미지 */
-.card_area .movie_img{
-  display: table-cell;
-  position: relative;
-  width: 120px;
-  height: 120px;
-  padding-left: 35px;
-  vertical-align: top;
-}
-
-.card_area .movie_img a ::before{
-  display: block;
-  position: relative;
-  height: 100%;
-  border: 1px solid rgba(0,0,0,0.05);
-}
 
 /* 페이징 css */
 #pagenation {
