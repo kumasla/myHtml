@@ -103,74 +103,6 @@
   background-color: #464D0F;
 }
 
-/* cardList */
-.board_list_card{
-  display: block;
-  list-style: none;
-  padding-left: 16px;
-  width: 92%;
-  font-size: 13px;
-  font-weight: 500;
-}
-
-.card_list{
-  padding: 16px 0;
-  box-sizing: border-box;
-  border-bottom: 1px solid #eeeeef;
-}
-
-.board_list_card a{
-  text-decoration: none;
-  color: black;
-}
-
-.board_list_card .card_area{
-  display: table;
-}
-
-
-.card_area{
-  display: table;
-  width: 100%;
-  position : relative;
-}
-
-.board_list_card .con{
-  display: table-cell;
-  position: relative;
-}
-
-/* 제목 */
-.board_list_card .title_area{
-  display: table;
-  width: 30%;
-  table-layout: fixed;
-  font-size: 16px;
-}
-
-.board_list_card .title_area .title{
-  display: flex;
-  align-items: center; 
-}
-.board_list_card .title_area .title .inner{
-  flex: 0 1 auto; 
-  white-space: nowrap; /* 넘칠 경우 줄바꿈 방지 */
-  overflow: hidden; /* 넘칠 경우 내용을 숨김 */
-  text-overflow: ellipsis; /* 넘칠 경우 ...으로 표시 */
-  max-width: 400%; 
-  min-width: 40px; 
-}
-
-.board_list_card .board_category{
-  flex-shrink: 0;
-  margin-left: 10px;
-  border-radius: 8px;
-  text-decoration: none;
-  text-align: center;
-  background-color: #464D0F;
-  color: #fff;
-  padding: 3px 10px 2px 10px; /* 버튼 사이즈 조정 */
-}
 
 /* 내용물 */
 .board_list_card .txt {
@@ -227,18 +159,19 @@
 }
 
 .board-container {
-  margin-left: 0.8%;
-  padding-top: 1.5%;
-  display: block;
+  display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 30px;
+  justify-content: space-between; 
+  align-items: flex-start; 
+  padding-top: 20px; 
+  margin-left: 1%;
+  width: 92%; 
+  margin-bottom: 20px;
 }
 
 .card {
-  width: calc(23% - 20px);
-  margin-right: 2.2%;
-  margin-bottom: 3%;
+  margin: 1%;
+  width: calc(23% - 20px);  /* 너비를 조절합니다 */
   background-color: #fff;
   display: inline-block;
   position: relative;
@@ -246,6 +179,11 @@
   box-shadow: 0 2px 4px rgba(0,0,0,0.15);
 }
 
+.border-bottom-div {
+  width: 94%; /* 전체 너비를 사용 */
+  border-top: 1px solid #e6e6e6; /* 하단 테두리 설정 */
+  padding-bottom: 20px; /* 하단 테두리 아래에 여백을 줌 */
+}
 .card-image img {
   width: 100%;
   height: auto;
@@ -259,10 +197,10 @@
 }
 
 .card-title {
-  display: flex; /* Flex 컨테이너 설정 */
+  display: flex; 
   align-items: center; /* 세로 정렬 */
   justify-content: space-between; /* 요소들 사이에 공간을 균등하게 분배 */
-  padding: 0; /* 좌우 패딩 */
+  padding: 0; 
 }
 
 .title-text {
@@ -275,20 +213,21 @@
 }
 
 .card-category {
-  padding: 5px 10px;
+  padding: 2.5px 8px;
   background-color: #464D0F;
   color: #fff;
-  border-radius: 15px;
-  font-size: 0.85rem;
-  display: inline-flex; /* Flex 아이템으로 설정 */
-  align-items: center; /* 세로 정렬 */
+  border-radius: 8px;
+  font-size: 0.8rem;
+  display: inline-flex; 
+  align-items: center; 
   white-space: nowrap;
-  margin-left: 10px; /* 제목과 카테고리 사이 간격 */
+  margin-left: 10px; 
   flex-shrink: 0; /* 카테고리 크기가 줄어들지 않도록 설정 */
 }
 
 .card-author{
   font-size: 0.9rem;
+  padding-top: 4px;
   font-weight: bold;
   white-space: nowrap; 
   overflow: hidden; 
@@ -328,39 +267,107 @@
   font-weight: bold;
 }
 
+.write_btn{
+  display: inline-block;
+  min-width: 50px;
+  height: 30px;
+  box-sizing: border-box;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+  position: relative;
+  background-color: #fff;
+  right: -88%;
+  font-weight: bolder;
+}
 
+.write_btn a{
+  color: black;
+  text-decoration: none;
+}
 
 /* 페이징 css */
+.board_bottom_area {
+  display: inline-block;
+  position: relative;
+  width: 80%;
+  margin: 2%;
+  margin-left: 8%;
+  align-items: center;
+}
+
+.board_bottom_area hr {
+  margin-top: 30px;
+  background-color: #eeeee6;
+  border: none;
+  height: 1px;
+}
+
 #pagenation {
   text-align: center;
-  padding: 0 2% 0 0;
 }
 
 #pagenation ul {
+  list-style: none;
   padding: 0;
-  align-items: center;
+  display: inline-block; /* 중앙 정렬을 위해 inline-block으로 변경 */
+  margin: 0; /* 기본 마진 제거 */
 }
 
 #pagenation ul li {
-  margin-right: 2%;
-  display: inline-block;
-  list-style: none;
+  display: inline;
+  margin: 0 5px; 
 }
 
 #pagenation ul li a {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-decoration: none;
-  transition: background-color 0.3s, color 0.3s;
+  color: #464D0F;
   font-size: 14px;
-  margin: 2px;
+  padding: 5px 10px; 
+  border-radius: 5px; /* 모서리를 둥글게 */
+  transition: background-color 0.3s, color 0.3s;
 }
 
 #pagenation ul li a:hover {
   background-color: #464D0F;
   color: #e6e6e6;
+}
+
+#pagenation ul li a#check_page {
+  background-color: #464D0F; 
+  color: #e6e6e6; 
+}
+
+.search_area {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  padding: 20px 0; 
+}
+
+.search_select {
+  padding: 5px 10px;
+  margin-right: 10px; 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search_input {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px; 
+  margin-right: 10px; 
+}
+
+.search_button {
+  padding: 5px 15px;
+  border: none;
+  background-color: #464D0F;
+  color: white; 
+  border-radius: 5px; 
+  cursor: pointer;
+}
+
+.search_button:hover {
+  background-color: #363D0F; 
 }

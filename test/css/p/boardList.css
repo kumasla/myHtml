@@ -111,7 +111,7 @@
   width: 92%;
   font-size: 13px;
   font-weight: 500;
-  
+  margin-bottom: 30px;
 }
 
 /* 게시판 목록 테이블 */
@@ -122,6 +122,7 @@ table {
     text-align: center;
     border-collapse: collapse;
     position: relative;
+    margin-bottom: 30px;
 }
 
 th,
@@ -165,37 +166,107 @@ td {
     right: 10px;
 }
 
-/* 페이지네이션 */
+.write_btn{
+  display: inline-block;
+  min-width: 50px;
+  height: 30px;
+  box-sizing: border-box;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+  position: relative;
+  background-color: #fff;
+  right: -88%;
+  font-weight: bolder;
+}
+
+.write_btn a{
+  color: black;
+  text-decoration: none;
+}
+
+/* 페이징 css */
+.board_bottom_area {
+  display: inline-block;
+  position: relative;
+  width: 80%;
+  margin: 2%;
+  margin-left: 8%;
+  align-items: center;
+}
+
+.board_bottom_area hr {
+  margin-top: 30px;
+  background-color: #eeeee6;
+  border: none;
+  height: 1px;
+}
+
 #pagenation {
-    text-align: center;
-    padding: 0 2% 0 0;
+  text-align: center;
 }
 
 #pagenation ul {
-    padding: 0;
-    align-items: center;
+  list-style: none;
+  padding: 0;
+  display: inline-block; /* 중앙 정렬을 위해 inline-block으로 변경 */
+  margin: 0; /* 기본 마진 제거 */
 }
 
 #pagenation ul li {
-    margin-right: 2%;
-    display: inline-block;
-    list-style: none;
+  display: inline;
+  margin: 0 5px; 
 }
 
 #pagenation ul li a {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
-    font-size: 14px;
-    margin: 2px;
+  text-decoration: none;
+  color: #464D0F;
+  font-size: 14px;
+  padding: 5px 10px; 
+  border-radius: 5px; /* 모서리를 둥글게 */
+  transition: background-color 0.3s, color 0.3s;
 }
 
 #pagenation ul li a:hover {
-    background-color: #464D0F;
-    color: #e6e6e6;
+  background-color: #464D0F;
+  color: #e6e6e6;
+}
+
+#pagenation ul li a#check_page {
+  background-color: #464D0F; 
+  color: #e6e6e6; 
+}
+
+.search_area {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  padding: 20px 0; 
+}
+
+.search_select {
+  padding: 5px 10px;
+  margin-right: 10px; 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search_input {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px; 
+  margin-right: 10px; 
+}
+
+.search_button {
+  padding: 5px 15px;
+  border: none;
+  background-color: #464D0F;
+  color: white; 
+  border-radius: 5px; 
+  cursor: pointer;
+}
+
+.search_button:hover {
+  background-color: #363D0F; 
 }
