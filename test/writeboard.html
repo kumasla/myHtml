@@ -30,77 +30,87 @@
                 <textarea id="content" name="content" placeholder="내용을 입력하세요."></textarea>
             </div>
             <!-- 파일 첨부 -->
-            <div class="file-inputs">
-                <table id="fileTable">
-                    <tbody>
-                        <tr class="file-row">
-                            <td><button type="button" class="custom-file-label" onclick="document.getElementById('hiddenFileInput').click()">메인 사진</button></td>
-                            <td class="center_td">
-                                <input type="file" id="hiddenFileInput" class="hidden-file-input" name="files[]" onchange="updateFileName(this)">
-                                <span class="file-name">선택된 파일 없음</span>
-                            </td>
-                            <td>
-                                <button type="button" class="add-more-files-btn" onclick="addFileInput()">파일 추가</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="image-upload-container">
-                <label class="image-upload-label">등록한 사진</label>
-                <div class="image-upload-wrapper">
-                    <label class="image-upload-area">
-                        <div class="image-upload-icon-wrapper">
-                            <!-- SVG 아이콘을 사용하는 대신 '+' 문자를 사용할 수 있습니다. -->
-                            <div class="image-upload-icon">+</div>
-                            <p class="image-upload-text">썸네일</p>
-                        </div>
-                        <input type="file" class="image-upload-input" accept="image/*" onchange="sumviewImage(event)" />
-                    </label>
+            <div class="upload-container">
+                <div class="upload-top-area">
+                    <label class="upload-label">등록한 사진</label>
+                    <button type="button" id="add-upload-container">파일 추가</button>
                 </div>
-                <!-- 이미지 미리보기 -->
-                <img id="imagePreview" class="image-preview" />
+                <label class="upload-box">
+                    <input type="file" class="file-input" accept="image/*" onchange="sumviewImage(event)" />
+                    <div class="upload-area">
+                        <div class="upload-content" id="uploadContent">
+                            <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                            </svg>
+                            <p class="upload-text">대표사진</p>
+                        </div>
+                        <!-- Image Preview -->
+                        <img id="imagePreview" class="image-preview" />
+                    </div>
+                </label>
             </div>
-            
+            <div class="write-row">
+                <button type="submit" class="submit-btn">등록</button>
+            </div>
         </form>
-        
         <!-- 제출 버튼 -->
-        <div class="write-row">
-            <button type="submit" class="submit-btn">등록</button>
-        </div>
     </div>
 
     <script>
-       function addFileInput() {
-            var fileTable = document.getElementById('fileTable').getElementsByTagName('tbody')[0];
-            var newRow = fileTable.insertRow(-1);
-            var uniqueId = 'fileInput' + (new Date()).getTime(); // Unique ID for the file input
+document.addEventListener('DOMContentLoaded', function() {
+    var addUploadButton = document.getElementById('add-upload-container');
+    var originalUploadContainer = document.querySelector('.upload-container');
 
-            newRow.innerHTML = `
-                <td>
-                    <button type="button" class="custom-file-label" onclick="document.getElementById('${uniqueId}').click()">사진 첨부</button>
-                </td>
-                <td class="center_td">
-                    <input type="file" id="${uniqueId}" class="hidden-file-input" name="files[]" onchange="updateFileName(this)">
-                    <span class="file-name">선택된 파일 없음</span>
-                </td>
-                <td>
-                    <button type="button" class="remove-file-btn" onclick="removeFileInput(this)">파일 제거</button>
-                </td>
-            `;
-            newRow.classList.add("file-row"); // Make sure to add the same class as the original file row
-        }
+    addUploadButton.addEventListener('click', function() {
+        var newUploadContainerHTML = `
+            <div class="upload-container">
+                <div class="upload-top-area">
+                    <label class="upload-label">등록한 사진</label>
+                    <button type="button" class="delete-upload-container">파일 삭제</button>
+                </div>
+                <label class="upload-box">
+                    <input type="file" class="file-input" accept="image/*" onchange="sumviewImage(event)" />
+                    <div class="upload-area">
+                        <div class="upload-content">
+                            <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                            </svg>
+                            <p class="upload-text">추가 사진</p>
+                        </div>
+                        <!-- Image Preview -->
+                        <img class="image-preview" style="display: none;" />
+                    </div>
+                </label>
+            </div>`;
+
+        var newUploadContainer = document.createElement('div');
+        newUploadContainer.innerHTML = newUploadContainerHTML;
+        originalUploadContainer.parentNode.insertBefore(newUploadContainer, originalUploadContainer.nextSibling);
+
+        // 파일 삭제 버튼에 이벤트 리스너 추가
+        var deleteButtons = document.querySelectorAll('.delete-upload-container');
+        deleteButtons.forEach(function(button) {
+            button.onclick = function() {
+                this.parentElement.parentElement.remove();
+            };
+        });
+    });
+});
+
+function sumviewImage(event) {
+    var imagePreview = event.target.parentNode.querySelector('.image-preview');
+    var uploadContent = event.target.parentNode.querySelector('.upload-content');
+    imagePreview.src = URL.createObjectURL(event.target.files[0]);
+    imagePreview.onload = function() {
+        URL.revokeObjectURL(imagePreview.src); // 메모리 해제
+    }
+    imagePreview.style.display = 'block'; // 이미지 미리보기 표시
+    uploadContent.style.display = 'none'; // 기존 콘텐츠 숨김
+}
 
 
-        function removeFileInput(btn) {
-            var row = btn.closest(".file-row");
-            row.remove();
-        }
 
-        function updateFileName(input) {
-            var fileNameField = input.nextElementSibling;
-            fileNameField.textContent = input.files.length > 0 ? input.files[0].name : '선택된 파일 없음';
-        }
+
     </script>
 </body>
 </html>
