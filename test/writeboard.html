@@ -7,42 +7,63 @@
     <link href="css/p/writeboard.css" rel="stylesheet">
 </head>
 <body>
+    <div class="head-container">
+        <h1>캠핑게시판 등록</h1>
+    </div>
     <div class="write-container">
-        <!-- 제목 입력 -->
-        <div class="write-row">
-            <input type="text" id="title" name="title" placeholder="제목을 입력하세요." />
-        </div>
-        <!-- 카테고리 선택 -->
-        <div class="write-row">
-            <select name="category" id="category">
-                <option value="백패킹">백패킹</option>
-                <option value="오토캠핑">오토캠핑</option>
-                <option value="장박">장박</option>
-                <option value="글램핑">글램핑</option>
-            </select>
-        </div>
-        <!-- 내용 입력 -->
-        <div class="write-row">
-            <textarea id="content" name="content" placeholder="내용을 입력하세요."></textarea>
-        </div>
-        <!-- 파일 첨부 -->
-        <!-- 파일 첨부 -->
-        <div class="file-inputs">
-            <table id="fileTable">
-                <tbody>
-                    <tr class="file-row">
-                        <td>
-                            <label for="hiddenFileInput" class="custom-file-label">파일 선택</label>
-                            <input type="file" id="hiddenFileInput" class="hidden-file-input" name="files[]" onchange="updateFileName(this)">
-                        </td>
-                        <td class="file-name">선택된 파일 없음</td>
-                        <td><button type="button" class="remove-file-btn" onclick="removeFileInput(this)">파일 추가</button></td>
-                    </tr>
-                </tbody>
-            </table>
-            <button type="button" class="add-more-files-btn" onclick="addFileInput()">더 추가하기</button>
-        </div>
-
+        <form>
+            <!-- 제목 입력 -->
+            <div class="write-row">
+                <input type="text" id="title" name="title" placeholder="제목을 입력하세요." />
+            </div>
+            <!-- 카테고리 선택 -->
+            <div class="write-row">
+                <select name="category" id="category">
+                    <option value="백패킹">백패킹</option>
+                    <option value="오토캠핑">오토캠핑</option>
+                    <option value="장박">장박</option>
+                    <option value="글램핑">글램핑</option>
+                </select>
+            </div>
+            <!-- 내용 입력 -->
+            <div class="write-row">
+                <textarea id="content" name="content" placeholder="내용을 입력하세요."></textarea>
+            </div>
+            <!-- 파일 첨부 -->
+            <div class="file-inputs">
+                <table id="fileTable">
+                    <tbody>
+                        <tr class="file-row">
+                            <td><button type="button" class="custom-file-label" onclick="document.getElementById('hiddenFileInput').click()">메인 사진</button></td>
+                            <td class="center_td">
+                                <input type="file" id="hiddenFileInput" class="hidden-file-input" name="files[]" onchange="updateFileName(this)">
+                                <span class="file-name">선택된 파일 없음</span>
+                            </td>
+                            <td>
+                                <button type="button" class="add-more-files-btn" onclick="addFileInput()">파일 추가</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="image-upload-container">
+                <label class="image-upload-label">등록한 사진</label>
+                <div class="image-upload-wrapper">
+                    <label class="image-upload-area">
+                        <div class="image-upload-icon-wrapper">
+                            <!-- SVG 아이콘을 사용하는 대신 '+' 문자를 사용할 수 있습니다. -->
+                            <div class="image-upload-icon">+</div>
+                            <p class="image-upload-text">썸네일</p>
+                        </div>
+                        <input type="file" class="image-upload-input" accept="image/*" onchange="sumviewImage(event)" />
+                    </label>
+                </div>
+                <!-- 이미지 미리보기 -->
+                <img id="imagePreview" class="image-preview" />
+            </div>
+            
+        </form>
+        
         <!-- 제출 버튼 -->
         <div class="write-row">
             <button type="submit" class="submit-btn">등록</button>
@@ -50,34 +71,36 @@
     </div>
 
     <script>
-        function addFileInput() {
+       function addFileInput() {
             var fileTable = document.getElementById('fileTable').getElementsByTagName('tbody')[0];
             var newRow = fileTable.insertRow(-1);
-            var cell1 = newRow.insertCell(0);
-            var cell2 = newRow.insertCell(1);
-            var cell3 = newRow.insertCell(2);
+            var uniqueId = 'fileInput' + (new Date()).getTime(); // Unique ID for the file input
 
-            var uniqueId = 'file' + (new Date()).getTime(); // 유니크한 ID 생성
-            cell1.innerHTML = '<label for="' + uniqueId + '" class="custom-file-label">파일 선택</label><input type="file" id="' + uniqueId + '" class="hidden-file-input" name="files[]" onchange="updateFileName(this)">';
-            cell2.className = 'file-name';
-            cell2.innerHTML = '선택된 파일 없음';
-            cell3.innerHTML = '<button type="button" class="remove-file-btn" onclick="removeFileInput(this)">파일 제거</button>';
+            newRow.innerHTML = `
+                <td>
+                    <button type="button" class="custom-file-label" onclick="document.getElementById('${uniqueId}').click()">사진 첨부</button>
+                </td>
+                <td class="center_td">
+                    <input type="file" id="${uniqueId}" class="hidden-file-input" name="files[]" onchange="updateFileName(this)">
+                    <span class="file-name">선택된 파일 없음</span>
+                </td>
+                <td>
+                    <button type="button" class="remove-file-btn" onclick="removeFileInput(this)">파일 제거</button>
+                </td>
+            `;
+            newRow.classList.add("file-row"); // Make sure to add the same class as the original file row
         }
 
+
         function removeFileInput(btn) {
-            var row = btn.parentNode.parentNode;
-            row.parentNode.removeChild(row);
+            var row = btn.closest(".file-row");
+            row.remove();
         }
 
         function updateFileName(input) {
-            var fileNameField = input.parentNode.nextSibling;
-            if(input.files.length > 0) {
-                fileNameField.textContent = input.files[0].name;
-            } else {
-                fileNameField.textContent = '선택된 파일 없음';
-            }
+            var fileNameField = input.nextElementSibling;
+            fileNameField.textContent = input.files.length > 0 ? input.files[0].name : '선택된 파일 없음';
         }
-
     </script>
 </body>
 </html>

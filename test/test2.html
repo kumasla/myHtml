@@ -1,232 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/p/test.css">
+    <title>간단한 오목 게임</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        #gameBoard {
+            display: grid;
+            grid-template-columns: repeat(15, 30px);
+            grid-template-rows: repeat(15, 30px);
+        }
+
+        .cell {
+            width: 30px;
+            height: 30px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+
+        .black {
+            background-color: black;
+        }
+
+        .white {
+            background-color: white;
+        }
+    </style>
 </head>
 <body>
-    <div id="content">
-        <div id="space_zone">
-            <p>
-                <imp></imp>
-            </p>
-        </div>
-        <div id="board_zone">
-            <div id="snb_zone">
-                <ul>
-                    <li>
-                        <a id="check_snb">캠핑게시시판</a>
-                    </li>
-                    <li>
-                        <a>캠핑레시피</a>
-                    </li>
-                </ul>
-            </div>
-            <div id="point_zone">
-                <div id="category">
-                    <form>
-                        <input type="hidden" name="boardId" value="free">
-                        <input type="hidden" name="category" value>
-                        <a href="#none" onclick="setCategory('')" class="on" id="allCategory">전체보기</a>
-                        <a href="#none" onclick="setCategory('백패킹')" class="on">백패킹</a>
-                        <a href="#none" onclick="setCategory('오토캠핑')" class="on">오토캠핑</a>
-                        <a href="#none" onclick="setCategory('장박')" class="on">장박</a>
-                        <a href="#none" onclick="setCategory('글램핑')" class="on">글램핑</a>
-                    </form>
-                </div>
-            </div>
-            <div id="board_zone_cont">
-                <div id="board_list_table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>번호</th>
-                                <th>분류</th>
-                                <th>작성자</th>
-                                <th>제목</th>
-                                <th>조회</th>
-                                <th>추천</th>
-                                <th>날짜</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>백패킹</td>
-                                <td class="board_writer">유성</td>
-                                <td class="board_title">백패킹 경험담~</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>2023-12-24</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>백패킹</td>
-                                <td class="board_writer">유성</td>
-                                <td class="board_title">백패킹 경험담~</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>2023-12-24</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>백패킹</td>
-                                <td class="board_writer">유성</td>
-                                <td class="board_title">백패킹 경험담~</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>2023-12-24</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>백패킹</td>
-                                <td class="board_writer">유성</td>
-                                <td class="board_title">백패킹 경험담~</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>2023-12-24</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>백패킹</td>
-                                <td class="board_writer">유성</td>
-                                <td class="board_title">백패킹 경험담~</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>2023-12-24</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>백패킹</td>
-                                <td class="board_writer">유성</td>
-                                <td class="board_title">백패킹 경험담~</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>2023-12-24</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>백패킹</td>
-                                <td class="board_writer">유성</td>
-                                <td class="board_title">백패킹 경험담~</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>2023-12-24</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>백패킹</td>
-                                <td class="board_writer">유성</td>
-                                <td class="board_title">백패킹 경험담~</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>2023-12-24</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>백패킹</td>
-                                <td class="board_writer">유성</td>
-                                <td class="board_title">백패킹 경험담~</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>2023-12-24</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>백패킹</td>
-                                <td class="board_writer">유성</td>
-                                <td class="board_title">백패킹 경험담~</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>2023-12-24</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>백패킹</td>
-                                <td class="board_writer">유성</td>
-                                <td class="board_title">백패킹 경험담~</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>2023-12-24</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>백패킹</td>
-                                <td class="board_writer">유성</td>
-                                <td class="board_title">백패킹 경험담~</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>2023-12-24</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>백패킹</td>
-                                <td class="board_writer">유성</td>
-                                <td class="board_title">백패킹 경험담~</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>2023-12-24</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>백패킹</td>
-                                <td class="board_writer">유성</td>
-                                <td class="board_title">백패킹 경험담~</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>2023-12-24</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>백패킹</td>
-                                <td class="board_writer">유성</td>
-                                <td class="board_title">백패킹 경험담~</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>2023-12-24</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div id="pagenation">
-                    <ul>
-                        <!-- 반복문으로 페이지 출력 + 특정조건에 화면 맨앞 뒤로가기 기능이 있어야함 -->
-                        <li>
-                            <a herf="#" id="check_page">1</a>
-                        </li>
-                        <li>
-                            <a herf="#">2</a>
-                        </li>
-                        <li>
-                            <a herf="#">3</a>
-                        </li>
-                        <li>
-                            <a herf="#">4</a>
-                        </li>
-                        <li>
-                            <a herf="#">5</a>
-                        </li>
-                        <li>
-                            <a herf="#">6</a>
-                        </li>
-                        <li>
-                            <a herf="#">7</a>
-                        </li>
-                        <li>
-                            <a herf="#">8</a>
-                        </li>
-                        <li>
-                            <a herf="#">9</a>
-                        </li>
-                        <li>
-                            <a herf="#">10</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+    <h1>간단한 오목 게임</h1>
+    <div id="gameBoard"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const boardSize = 15;
+            let currentPlayer = 'black';
+            const gameBoard = document.getElementById('gameBoard');
+
+            // 보드 초기화
+            for (let i = 0; i < boardSize * boardSize; i++) {
+                const cell = document.createElement('div');
+                cell.classList.add('cell');
+                cell.addEventListener('click', () => makeMove(cell));
+                gameBoard.appendChild(cell);
+            }
+
+            function makeMove(cell) {
+                if (cell.classList.contains('black') || cell.classList.contains('white')) {
+                    return;
+                }
+
+                cell.classList.add(currentPlayer);
+
+                // 승리 조건 확인
+                if (checkWin(currentPlayer)) {
+                    alert(`${currentPlayer} 승리!`);
+                    resetGame();
+                } else {
+                    currentPlayer = currentPlayer === 'black' ? 'white' : 'black';
+                }
+            }
+
+            function checkWin(player) {
+                // 여기에 승리 조건 로직을 추가하세요.
+                // 예: 가로, 세로, 대각선에 같은 색의 돌이 5개 연속으로 있는지 확인
+                return false;
+            }
+
+            function resetGame() {
+                // 게임 보드 초기화
+                const cells = document.querySelectorAll('.cell');
+                cells.forEach(cell => {
+                    cell.classList.remove('black', 'white');
+                });
+                currentPlayer = 'black';
+            }
+        });
+
+    </script>
 </body>
 </html>
