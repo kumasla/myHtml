@@ -76,32 +76,6 @@
   border-bottom: 3px solid black;
 }
 
-/* 카테고리 */
-#point_zone{
-  width: 92%;
-  padding-left: 0;
-  margin-left: 1.5%;
-  border-bottom: 1px solid black;
-}
-
-#category {
-  margin: 1%;
-  margin-left: 0;
-}
-
-#category a {
-  text-decoration: none;
-  text-align: center;
-  color: black;
-  padding: 0.5% 1% 0.5% 1%;
-  margin: auto;
-}
-
-#allCategory {
-  border-radius: 8px;
-  color: #e6e6e6;
-  background-color: #464D0F;
-}
 
 
 /* 내용물 */
@@ -273,8 +247,8 @@
   text-overflow: ellipsis;
   white-space: normal;
   line-height: 1.2em;
-  height: 68px; 
-  max-height: 68px;
+  height: 66px; 
+  max-height: 66px;
   display: block;
   box-sizing: border-box; 
   border-bottom-right-radius: 10px;
@@ -388,4 +362,3 @@
 .search_button:hover {
   background-color: #363D0F; 
 }
-
